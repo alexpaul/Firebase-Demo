@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Firebase_Demo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AEc-4S-aDd" userLabel="Container View" customClass="DesignableView" customModule="Firebase_Demo" customModuleProvider="target">
+                                <rect key="frame" x="20" y="179" width="374" height="538"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="lmn-Aw-9DD" customClass="DesignableTextField" customModule="Firebase_Demo" customModuleProvider="target">
+                                        <rect key="frame" x="37.5" y="100" width="299" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="x1y-AD-d6N"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="password" textAlignment="center" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="3XB-YP-0mT" customClass="DesignableTextField" customModule="Firebase_Demo" customModuleProvider="target">
+                                        <rect key="frame" x="37.5" y="184" width="299" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="V4q-SM-a3C"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iua-Ju-Lie" customClass="DesignableButton" customModule="Firebase_Demo" customModuleProvider="target">
+                                        <rect key="frame" x="37.5" y="268" width="299" height="44"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="oyd-WY-0XM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="loginButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RfY-gp-wpI"/>
+                                        </connections>
+                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="56d-uf-Nv9">
+                                        <rect key="frame" x="38.5" y="340" width="297.5" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account ? Click" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ocH-J6-l7S">
+                                                <rect key="frame" x="0.0" y="0.0" width="225.5" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Myv-6L-gtY">
+                                                <rect key="frame" x="239.5" y="0.0" width="58" height="30"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <state key="normal" title="SIGNUP">
+                                                    <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="toggleAccountState:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DFW-Tr-op0"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="lmn-Aw-9DD" firstAttribute="width" secondItem="AEc-4S-aDd" secondAttribute="width" multiplier="0.8" id="3Lc-VE-uq1"/>
+                                    <constraint firstItem="56d-uf-Nv9" firstAttribute="centerX" secondItem="AEc-4S-aDd" secondAttribute="centerX" id="9bz-pb-2ob"/>
+                                    <constraint firstItem="Iua-Ju-Lie" firstAttribute="centerX" secondItem="AEc-4S-aDd" secondAttribute="centerX" id="Azg-gY-wPg"/>
+                                    <constraint firstItem="3XB-YP-0mT" firstAttribute="top" secondItem="lmn-Aw-9DD" secondAttribute="bottom" constant="40" id="CN1-B2-gti"/>
+                                    <constraint firstItem="56d-uf-Nv9" firstAttribute="width" secondItem="AEc-4S-aDd" secondAttribute="width" multiplier="0.795455" id="GJv-sh-12F"/>
+                                    <constraint firstItem="56d-uf-Nv9" firstAttribute="top" secondItem="Iua-Ju-Lie" secondAttribute="bottom" constant="28" id="GWm-vz-VWc"/>
+                                    <constraint firstItem="3XB-YP-0mT" firstAttribute="centerX" secondItem="AEc-4S-aDd" secondAttribute="centerX" id="JfO-Q2-0pt"/>
+                                    <constraint firstItem="lmn-Aw-9DD" firstAttribute="centerX" secondItem="AEc-4S-aDd" secondAttribute="centerX" id="Pv8-nA-Ece"/>
+                                    <constraint firstItem="3XB-YP-0mT" firstAttribute="width" secondItem="AEc-4S-aDd" secondAttribute="width" multiplier="0.8" id="Qp5-Sl-NVs"/>
+                                    <constraint firstItem="Iua-Ju-Lie" firstAttribute="width" secondItem="AEc-4S-aDd" secondAttribute="width" multiplier="0.8" id="RM0-oQ-3yt"/>
+                                    <constraint firstItem="Iua-Ju-Lie" firstAttribute="top" secondItem="3XB-YP-0mT" secondAttribute="bottom" constant="40" id="Zec-jJ-a1S"/>
+                                    <constraint firstItem="lmn-Aw-9DD" firstAttribute="top" secondItem="AEc-4S-aDd" secondAttribute="top" constant="100" id="bn7-ju-bBt"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UeN-YM-0RH" customClass="GradientView" customModule="Firebase_Demo" customModuleProvider="target">
+                                <rect key="frame" x="157" y="129" width="100" height="100"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="cBh-50-7DU"/>
+                                    <constraint firstAttribute="height" constant="100" id="dAo-z0-NmG"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pursuit-logo" translatesAutoresizingMaskIntoConstraints="NO" id="Bu3-OD-s1S" customClass="DesignableImageView" customModule="Firebase_Demo" customModuleProvider="target">
+                                <rect key="frame" x="157" y="129" width="100" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4r4-Do-2LA">
+                                <rect key="frame" x="20" y="64" width="374" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Bu3-OD-s1S" firstAttribute="trailing" secondItem="UeN-YM-0RH" secondAttribute="trailing" id="1rR-oI-Rg1"/>
+                            <constraint firstItem="Bu3-OD-s1S" firstAttribute="leading" secondItem="UeN-YM-0RH" secondAttribute="leading" id="6IA-3e-E3F"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4r4-Do-2LA" secondAttribute="trailing" constant="20" id="7ut-qA-TuK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AEc-4S-aDd" secondAttribute="trailing" constant="20" id="Hoz-Ad-9as"/>
+                            <constraint firstItem="AEc-4S-aDd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IGR-FK-Bek"/>
+                            <constraint firstItem="UeN-YM-0RH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M2F-rA-Zcy"/>
+                            <constraint firstItem="AEc-4S-aDd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="WQv-iI-ujJ"/>
+                            <constraint firstItem="Bu3-OD-s1S" firstAttribute="top" secondItem="UeN-YM-0RH" secondAttribute="top" id="ikD-5c-HOY"/>
+                            <constraint firstItem="AEc-4S-aDd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="kTJ-j3-Wr8"/>
+                            <constraint firstItem="4r4-Do-2LA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="p0S-w7-9gb"/>
+                            <constraint firstItem="AEc-4S-aDd" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="phS-QJ-HG0"/>
+                            <constraint firstItem="Bu3-OD-s1S" firstAttribute="bottom" secondItem="UeN-YM-0RH" secondAttribute="bottom" id="rJf-Dr-Csc"/>
+                            <constraint firstItem="4r4-Do-2LA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="sSW-QX-mbM"/>
+                            <constraint firstItem="UeN-YM-0RH" firstAttribute="centerY" secondItem="AEc-4S-aDd" secondAttribute="top" id="tnA-G8-d7l"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="accountStateButton" destination="Myv-6L-gtY" id="ieZ-Pz-jMI"/>
+                        <outlet property="accountStateMessageLabel" destination="ocH-J6-l7S" id="PzM-Vr-zFf"/>
+                        <outlet property="containerView" destination="AEc-4S-aDd" id="4g3-Za-GRh"/>
+                        <outlet property="emailTextField" destination="lmn-Aw-9DD" id="6Ec-uF-3vy"/>
+                        <outlet property="errorLabel" destination="4r4-Do-2LA" id="lac-F4-v5N"/>
+                        <outlet property="loginButton" destination="Iua-Ju-Lie" id="voh-Qi-KMy"/>
+                        <outlet property="passwordTextField" destination="3XB-YP-0mT" id="1vg-OG-8eQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-633.33333333333337" y="113.83928571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pursuit-logo" width="207" height="300"/>
+    </resources>
+</document>
