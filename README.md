@@ -1,6 +1,6 @@
 # Firebase - Getting Started
 
-Introduction to Firebase. In this app we will cover Authentication, Database and Storage.
+Introduction to Firebase. In this app we will cover [Authentication](https://github.com/alexpaul/Firebase-Demo/blob/master/FirebaseAuthentication.md), Database and Storage.
 
 ![app screenshot](Assets/app-screenshot.png)
 
