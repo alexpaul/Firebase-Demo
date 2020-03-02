@@ -9,8 +9,10 @@ target 'Firebase-Demo' do
 	pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   
-  # Next week
-  #pod 'Firebase/Firestore'
+  # Database pods
+  pod 'Firebase/Firestore'
+  pod 'FirebaseFirestoreSwift'
+  
   #pod 'Firebase/Storage'
 
   target 'Firebase-DemoTests' do

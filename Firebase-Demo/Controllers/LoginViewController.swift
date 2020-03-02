@@ -52,10 +52,9 @@ class LoginViewController: UIViewController {
             self?.errorLabel.text = "\(error.localizedDescription)"
             self?.errorLabel.textColor = .systemRed
           }
-        case .success(let authDataResult):
+        case .success:
           DispatchQueue.main.async {
-            self?.errorLabel.textColor = .systemGreen
-            self?.errorLabel.text = "Welcome back \(authDataResult.user.email ?? "")"
+            self?.navigateToMainView()
           }
         }
       }
@@ -67,14 +66,17 @@ class LoginViewController: UIViewController {
             self?.errorLabel.text = "\(error.localizedDescription)"
             self?.errorLabel.textColor = .systemRed
           }
-        case .success(let authDataResult):
+        case .success:
           DispatchQueue.main.async {
-            self?.errorLabel.text = "Thanks for signing up \(authDataResult.user.email ?? "")"
-            self?.errorLabel.textColor = .systemGreen
+            self?.navigateToMainView()
           }
         }
       }
     }
+  }
+  
+  private func navigateToMainView() {
+    UIViewController.showViewController(storyBoardName: "MainView", viewControllerId: "MainTabBarController")
   }
   
   private func clearErrorLabel() {
@@ -89,13 +91,13 @@ class LoginViewController: UIViewController {
     let duration: TimeInterval = 1.0
     
     if accountState == .existingUser {
-      UIView.transition(with: containerView, duration: duration, options: [.transitionCrossDissolve], animations: {
+      UIView.transition(with: containerView, duration: duration, options: [.transitionFlipFromRight], animations: {
         self.loginButton.setTitle("Login", for: .normal)
         self.accountStateMessageLabel.text = "Don't have an account ? Click"
         self.accountStateButton.setTitle("SIGNUP", for: .normal)
       }, completion: nil)
     } else {
-      UIView.transition(with: containerView, duration: duration, options: [.transitionCrossDissolve], animations: {
+      UIView.transition(with: containerView, duration: duration, options: [.transitionFlipFromLeft], animations: {
         self.loginButton.setTitle("Sign Up", for: .normal)
         self.accountStateMessageLabel.text = "Already have an account ?"
         self.accountStateButton.setTitle("LOGIN", for: .normal)
