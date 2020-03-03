@@ -198,18 +198,59 @@
         <!--Item Feed-->
         <scene sceneID="ovk-7t-4KG">
             <objects>
-                <viewController id="Mr5-ra-z0Y" sceneMemberID="viewController">
+                <viewController id="Mr5-ra-z0Y" customClass="ItemFeedViewController" customModule="Firebase_Demo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cYv-HM-TfE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y0x-C3-wrA">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="itemCell" textLabel="Dt3-L4-Dcc" detailTextLabel="MmZ-VJ-4ep" style="IBUITableViewCellStyleSubtitle" id="tps-O5-QPj">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tps-O5-QPj" id="zZc-OJ-1wf">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dt3-L4-Dcc">
+                                                    <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MmZ-VJ-4ep">
+                                                    <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Y0x-C3-wrA" firstAttribute="trailing" secondItem="SIv-dt-qtI" secondAttribute="trailing" constant="0.01" id="4m9-Bx-D9o"/>
+                            <constraint firstItem="Y0x-C3-wrA" firstAttribute="leading" secondItem="SIv-dt-qtI" secondAttribute="leading" constant="0.01" id="5qf-TE-twQ"/>
+                            <constraint firstItem="Y0x-C3-wrA" firstAttribute="top" secondItem="cYv-HM-TfE" secondAttribute="top" constant="0.01" id="d48-OV-BMB"/>
+                            <constraint firstItem="Y0x-C3-wrA" firstAttribute="bottom" secondItem="SIv-dt-qtI" secondAttribute="bottom" constant="0.01" id="mMh-uC-qKI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="SIv-dt-qtI"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item Feed" id="HeD-LA-he7"/>
+                    <connections>
+                        <outlet property="tableView" destination="Y0x-C3-wrA" id="6eg-JR-euN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lYY-YR-mZG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="129" y="-463"/>
+            <point key="canvasLocation" x="128.98550724637681" y="-463.39285714285711"/>
         </scene>
         <!--Main Tab Bar Controller-->
         <scene sceneID="5Vu-2i-HNN">
