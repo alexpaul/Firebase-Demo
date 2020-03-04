@@ -26,6 +26,10 @@ class ItemFeedViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.dataSource = self
+    tableView.delegate = self
+    
+    // register our custom .xib ItemCell class
+    tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "itemCell")
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -54,11 +58,17 @@ extension ItemFeedViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
+    guard let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as? ItemCell else {
+      fatalError("could not downcast to ItemCell")
+    }
     let item = items[indexPath.row]
-    cell.textLabel?.text = item.itemName
-    let price = String(format: "%.2f", item.price)
-    cell.detailTextLabel?.text = "@\(item.sellerName) price: $\(price)"
+    cell.configureCell(for: item)
     return cell
+  }
+}
+
+extension ItemFeedViewController: UITableViewDelegate {
+  func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    return 140
   }
 }

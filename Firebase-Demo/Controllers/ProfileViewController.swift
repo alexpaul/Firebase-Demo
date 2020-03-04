@@ -11,6 +11,7 @@ import FirebaseAuth
 
 class ProfileViewController: UIViewController {
   
+  
   @IBOutlet weak var profileImageView: UIImageView!
   @IBOutlet weak var displayNameTextField: UITextField!
   @IBOutlet weak var emailLabel: UILabel!
@@ -50,6 +51,20 @@ class ProfileViewController: UIViewController {
       }
     })
   }
+  
+  @IBAction func editProfilePhotoButtonPressed(_ sender: UIButton) {
+    let alertController = UIAlertController(title: "Choose Photo Option", message: nil, preferredStyle: .actionSheet)
+    let cameraAction = UIAlertAction(title: "Camera", style: .default, handler: nil)
+    let photoLibraryAction = UIAlertAction(title: "Photo Library", style: .default, handler: nil)
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+    if UIImagePickerController.isSourceTypeAvailable(.camera) {
+      alertController.addAction(cameraAction)
+    }
+    alertController.addAction(photoLibraryAction)
+    alertController.addAction(cancelAction)
+    present(alertController, animated: true)
+  }
+  
 }
 
 extension ProfileViewController: UITextFieldDelegate {

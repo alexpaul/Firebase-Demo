@@ -30,6 +30,8 @@
 		57845AEF24092D5D00F35651 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57845AEE24092D5D00F35651 /* LoginView.storyboard */; };
 		57845AF124092DBB00F35651 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57845AF024092DBB00F35651 /* GradientView.swift */; };
 		57845AF324092DDC00F35651 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57845AF224092DDC00F35651 /* DesignableView.swift */; };
+		57EE775F240FFDEF0042EA62 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 57EE775E240FFDEF0042EA62 /* ItemCell.xib */; };
+		57EE7761240FFE150042EA62 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EE7760240FFE150042EA62 /* ItemCell.swift */; };
 		81A13B4951A16F5C4703CFC8 /* Pods_Firebase_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9FB1D6ECFC7E333DB03EFE8 /* Pods_Firebase_Demo.framework */; };
 		BCC592E9FE1736CF01B21A54 /* Pods_Firebase_DemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 179EF6D25BB3C6F5C0A06E5F /* Pods_Firebase_DemoTests.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +77,8 @@
 		57845AEE24092D5D00F35651 /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
 		57845AF024092DBB00F35651 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		57845AF224092DDC00F35651 /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		57EE775E240FFDEF0042EA62 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
+		57EE7760240FFE150042EA62 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		6FEA799317ABB3E81574A15D /* Pods-Firebase-DemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase-DemoTests.debug.xcconfig"; path = "Target Support Files/Pods-Firebase-DemoTests/Pods-Firebase-DemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E99210720747DE89D221D987 /* Pods-Firebase-DemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase-DemoTests.release.xcconfig"; path = "Target Support Files/Pods-Firebase-DemoTests/Pods-Firebase-DemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		F9FB1D6ECFC7E333DB03EFE8 /* Pods_Firebase_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Firebase_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,6 +182,8 @@
 				57845AF024092DBB00F35651 /* GradientView.swift */,
 				57845AF224092DDC00F35651 /* DesignableView.swift */,
 				574C4D90240D757900853A59 /* CategoryCell.swift */,
+				57EE7760240FFE150042EA62 /* ItemCell.swift */,
+				57EE775E240FFDEF0042EA62 /* ItemCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -313,6 +319,7 @@
 			files = (
 				57845AD924092D4400F35651 /* LaunchScreen.storyboard in Resources */,
 				5764560224096E4D00203760 /* GoogleService-Info.plist in Resources */,
+				57EE775F240FFDEF0042EA62 /* ItemCell.xib in Resources */,
 				574C4D81240D5E0A00853A59 /* MainView.storyboard in Resources */,
 				57845AD624092D4400F35651 /* Assets.xcassets in Resources */,
 				57845AEF24092D5D00F35651 /* LoginView.storyboard in Resources */,
@@ -399,6 +406,7 @@
 			files = (
 				574C4D98240D7E6000853A59 /* DatabaseService.swift in Sources */,
 				574C4D8D240D5FA000853A59 /* UIViewController+Navigation.swift in Sources */,
+				57EE7761240FFE150042EA62 /* ItemCell.swift in Sources */,
 				57845AD124092D4300F35651 /* LoginViewController.swift in Sources */,
 				574C4D85240D5F3800853A59 /* ItemFeedViewController.swift in Sources */,
 				574C4D91240D757900853A59 /* CategoryCell.swift in Sources */,
