@@ -34,19 +34,19 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="n9v-SW-Sw9">
-                                                    <rect key="frame" x="0.0" y="1" width="235" height="174.5"/>
+                                                    <rect key="frame" x="0.0" y="1" width="235" height="130.5"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="category name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6c9-UL-u2n">
-                                                    <rect key="frame" x="8" y="266.5" width="219" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="category name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6c9-UL-u2n">
+                                                    <rect key="frame" x="8" y="254.5" width="219" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="6c9-UL-u2n" secondAttribute="bottom" constant="8" id="0Pw-mb-zav"/>
+                                                <constraint firstAttribute="bottom" secondItem="6c9-UL-u2n" secondAttribute="bottom" constant="20" id="0Pw-mb-zav"/>
                                                 <constraint firstAttribute="trailing" secondItem="n9v-SW-Sw9" secondAttribute="trailing" constant="0.01" id="52T-Zc-CAv"/>
-                                                <constraint firstItem="n9v-SW-Sw9" firstAttribute="height" secondItem="4XM-7G-ldO" secondAttribute="height" multiplier="0.6" id="AS7-kw-F84"/>
+                                                <constraint firstItem="n9v-SW-Sw9" firstAttribute="height" secondItem="4XM-7G-ldO" secondAttribute="height" multiplier="0.45" id="AS7-kw-F84"/>
                                                 <constraint firstItem="n9v-SW-Sw9" firstAttribute="leading" secondItem="4XM-7G-ldO" secondAttribute="leading" constant="0.01" id="jwc-7I-mcx"/>
                                                 <constraint firstItem="6c9-UL-u2n" firstAttribute="leading" secondItem="4XM-7G-ldO" secondAttribute="leading" constant="8" id="vJD-vk-edY"/>
                                                 <constraint firstAttribute="trailing" secondItem="6c9-UL-u2n" secondAttribute="trailing" constant="8" id="wdq-GA-HPw"/>
