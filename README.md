@@ -12,6 +12,8 @@ In order to run this app please do the following:
 4. Download and add the ```GoogleService-Info.plist``` file to your Xcode project. 
 5. At this point you will be able to successfully run this project. 
 
+[See lecture videos for more](https://www.youtube.com/watch?v=n0z2uSDY2Nw&t)
+
 ![app screenshot](Assets/app-screenshot.png)
 
 [Firebase](https://firebase.google.com/) 
