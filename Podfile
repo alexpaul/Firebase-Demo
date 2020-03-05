@@ -9,11 +9,15 @@ target 'Firebase-Demo' do
 	#pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
   
-  # Database pods
+  # Database is used to store the user's data e.g item created
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   
+  # Storage is used to store media files
   pod 'Firebase/Storage'
+  
+  # Image processing third party library
+  pod 'Kingfisher'
 
   target 'Firebase-DemoTests' do
     inherit! :search_paths

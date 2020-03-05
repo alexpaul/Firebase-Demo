@@ -27,7 +27,7 @@ class StorageService {
     }
     
     // we need to establish which bucket or collection or folder we will be saving the photo to
-    var photoReference: StorageReference!
+    var photoReference: StorageReference! // nil
     
     if let userId = userId { // coming from ProfileViewController
       photoReference = storageRef.child("UserProfilePhotos/\(userId).jpg")
@@ -37,7 +37,7 @@ class StorageService {
     
     // configure metatdata for the object being uploaded
     let metadata = StorageMetadata()
-    metadata.contentType = "image/jpg"
+    metadata.contentType = "image/jpg" // MIME type
     
     let _ = photoReference.putData(imageData, metadata: metadata) { (metadata, error) in
       if let error = error {

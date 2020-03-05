@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import Kingfisher
 
 class ProfileViewController: UIViewController {
   
@@ -41,6 +42,7 @@ class ProfileViewController: UIViewController {
     }
     emailLabel.text = user.email
     displayNameTextField.text = user.displayName
+    profileImageView.kf.setImage(with: user.photoURL)
     //user.displayName
     //user.email
     //user.phoneNumber
@@ -64,22 +66,35 @@ class ProfileViewController: UIViewController {
     print("original image size: \(selectedImage.size)")
     print("resized image size: \(resizedImage)")
     
-    // TODO:
     // call storageService.upload
-    storageService.uploadPhoto(userId: user.uid, image: resizedImage) { (result) in
+    storageService.uploadPhoto(userId: user.uid, image: resizedImage) { [weak self] (result) in
       // code here to add the photoURL to the user's photoURL property then commit changes
+      switch result {
+      case .failure(let error):
+        DispatchQueue.main.async {
+          self?.showAlert(title: "Error uploading photo", message: "\(error.localizedDescription)")
+        }
+      case .success(let url):
+        let request = Auth.auth().currentUser?.createProfileChangeRequest()
+        request?.displayName = displayName
+        request?.photoURL = url
+        request?.commitChanges(completion: { [unowned self] (error) in
+          if let error = error {
+            DispatchQueue.main.async {
+              self?.showAlert(title: "Error updating profile", message: "Error changing profile: \(error.localizedDescription).")
+            }
+          } else {
+            DispatchQueue.main.async {
+              self?.showAlert(title: "Profile Update", message: "Profile successfully updated 🥳.")
+            }
+          }
+        })
+      }
+      
     }
     
     
-    let request = Auth.auth().currentUser?.createProfileChangeRequest()
-    request?.displayName = displayName
-    request?.commitChanges(completion: { [unowned self] (error) in
-      if let error = error {
-        self.showAlert(title: "Profile Update", message: "Error changing profile: \(error).")
-      } else {
-        self.showAlert(title: "Profile Update", message: "Profile successfully updated.")
-      }
-    })
+
   }
   
   @IBAction func editProfilePhotoButtonPressed(_ sender: UIButton) {
@@ -100,6 +115,18 @@ class ProfileViewController: UIViewController {
     alertController.addAction(cancelAction)
     present(alertController, animated: true)
   }
+  
+  @IBAction func signOutButtonPressed(_ sender: UIButton) {
+    do {
+      try Auth.auth().signOut()
+      UIViewController.showViewController(storyBoardName: "LoginView", viewControllerId: "LoginViewController")
+    } catch {
+      DispatchQueue.main.async {
+        self.showAlert(title: "Error signing out", message: "\(error.localizedDescription)")
+      }
+    }
+  }
+  
   
 }
 

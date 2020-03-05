@@ -98,13 +98,22 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AUl-Xc-oY5">
+                                <rect key="frame" x="0.0" y="217" width="414" height="411.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="AUl-Xc-oY5" secondAttribute="height" multiplier="1:1" id="sJW-hc-e7t"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="AUl-Xc-oY5" firstAttribute="top" secondItem="uJE-lh-n2d" secondAttribute="bottom" constant="20" id="D1D-dS-wfA"/>
+                            <constraint firstItem="AUl-Xc-oY5" firstAttribute="leading" secondItem="MPL-pX-bqH" secondAttribute="leading" constant="0.01" id="I3B-Pj-brL"/>
                             <constraint firstItem="uJE-lh-n2d" firstAttribute="leading" secondItem="MPL-pX-bqH" secondAttribute="leading" constant="20" id="LEV-5d-5KP"/>
                             <constraint firstItem="MPL-pX-bqH" firstAttribute="trailing" secondItem="uJE-lh-n2d" secondAttribute="trailing" constant="20" id="b9g-fF-azA"/>
                             <constraint firstItem="MPL-pX-bqH" firstAttribute="trailing" secondItem="WE6-Se-O8V" secondAttribute="trailing" constant="20" id="h1C-el-V34"/>
                             <constraint firstItem="WE6-Se-O8V" firstAttribute="top" secondItem="MPL-pX-bqH" secondAttribute="top" constant="20" id="lp0-Mo-Ia1"/>
+                            <constraint firstItem="AUl-Xc-oY5" firstAttribute="trailing" secondItem="MPL-pX-bqH" secondAttribute="trailing" constant="0.01" id="rAV-Nv-j9s"/>
                             <constraint firstItem="uJE-lh-n2d" firstAttribute="top" secondItem="WE6-Se-O8V" secondAttribute="bottom" constant="20" id="rhT-Mb-hfX"/>
                             <constraint firstItem="WE6-Se-O8V" firstAttribute="leading" secondItem="MPL-pX-bqH" secondAttribute="leading" constant="20" id="wtV-i1-kfw"/>
                         </constraints>
@@ -118,6 +127,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="itemImageView" destination="AUl-Xc-oY5" id="duX-m4-Wmg"/>
                         <outlet property="itemNameTextField" destination="WE6-Se-O8V" id="Hnb-5U-mJ8"/>
                         <outlet property="itemPriceTextField" destination="uJE-lh-n2d" id="w5Z-KH-v4x"/>
                     </connections>
@@ -134,7 +144,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eUu-w8-YKB" customClass="DesignableImageView" customModule="Firebase_Demo" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eUu-w8-YKB" customClass="DesignableImageView" customModule="Firebase_Demo" customModuleProvider="target">
                                 <rect key="frame" x="147" y="85.5" width="120" height="117"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -180,6 +190,13 @@
                                     <action selector="editProfilePhotoButtonPressed:" destination="HE5-3x-dQQ" eventType="touchUpInside" id="cKo-uV-uhr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8f-pw-rYP">
+                                <rect key="frame" x="177" y="493" width="60" height="30"/>
+                                <state key="normal" title="Sign Out"/>
+                                <connections>
+                                    <action selector="signOutButtonPressed:" destination="HE5-3x-dQQ" eventType="touchUpInside" id="Ryb-Ub-6VV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -188,6 +205,8 @@
                             <constraint firstItem="6UZ-KF-Jov" firstAttribute="trailing" secondItem="duG-1K-pB5" secondAttribute="trailing" constant="20" id="94a-LP-1Dd"/>
                             <constraint firstItem="eUu-w8-YKB" firstAttribute="top" secondItem="6UZ-KF-Jov" secondAttribute="top" constant="40" id="9d6-bU-wTH"/>
                             <constraint firstItem="LPf-gz-MFn" firstAttribute="centerY" secondItem="eUu-w8-YKB" secondAttribute="centerY" id="P96-7E-8d1"/>
+                            <constraint firstItem="S8f-pw-rYP" firstAttribute="centerX" secondItem="rdK-Kv-sAt" secondAttribute="centerX" id="UdU-1V-Shn"/>
+                            <constraint firstItem="S8f-pw-rYP" firstAttribute="top" secondItem="AiJ-dj-dl0" secondAttribute="bottom" constant="30" id="Yo6-xi-OVD"/>
                             <constraint firstItem="ayg-dE-4d8" firstAttribute="top" secondItem="eUu-w8-YKB" secondAttribute="bottom" constant="20" id="c20-jq-MOr"/>
                             <constraint firstItem="LPf-gz-MFn" firstAttribute="leading" secondItem="eUu-w8-YKB" secondAttribute="trailing" constant="8" id="fqT-eg-e0k"/>
                             <constraint firstItem="eUu-w8-YKB" firstAttribute="centerX" secondItem="rdK-Kv-sAt" secondAttribute="centerX" id="iZW-VK-J7N"/>
