@@ -1,6 +1,18 @@
 # Firebase - Getting Started
 
-Introduction to Firebase. In this app we will cover [Authentication](https://github.com/alexpaul/Firebase-Demo/blob/master/FirebaseAuthentication.md), Database and Storage.
+Introduction to Firebase. In this app we will cover [Authentication](https://firebase.google.com/docs/auth), [Firestore](https://firebase.google.com/docs/firestore) and [Storage](https://firebase.google.com/docs/storage).
+
+## Running this app
+
+In order to run this app please do the following: 
+
+1. Clone this project to your machine. 
+2. Using your google sign in account, navigate to the [Firebase console](https://console.firebase.google.com/u/0/) and create a Firebase project. 
+3. Go through the project creation steps below. 
+4. Download and add the ```GoogleService-Info.plist``` file to your Xcode project. 
+5. At this point you will be able to successfully run this project. 
+
+[See lecture videos for more](https://www.youtube.com/watch?v=n0z2uSDY2Nw&t)
 
 ![app screenshot](Assets/app-screenshot.png)
 
