@@ -27,7 +27,7 @@ In order to run this app please do the following:
 - [x] user can view an item
 - [x] app stores user profile photos 
 - [x] app stores item photos
-- [ ] user can change profile photo and display name
+- [x] user can change profile photo and display name
 - [ ] user can delete ONLY their created item (security rules)
 - [ ] user can see a specific user's items 
 - [ ] can query (filter) for a specific category of items 
