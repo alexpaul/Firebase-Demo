@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 class ItemFeedViewController: UIViewController {
   
@@ -22,6 +23,8 @@ class ItemFeedViewController: UIViewController {
       }
     }
   }
+  
+  private let databaseService = DatabaseService()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -65,6 +68,36 @@ extension ItemFeedViewController: UITableViewDataSource {
     cell.configureCell(for: item)
     return cell
   }
+  
+  func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == .delete {
+      // perform deletion on item
+      let item = items[indexPath.row]
+      databaseService.delete(item: item) { [weak self] (result) in
+        switch result {
+        case .failure(let error):
+          DispatchQueue.main.async {
+            self?.showAlert(title: "Deletion error", message: error.localizedDescription)
+          }
+        case .success:
+          print("deleted successfully")
+        }
+      }
+    }
+  }
+  
+  // on the client side meaning the app we will ensure that swipe to delete only works for the user who created the item
+  func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    let item = items[indexPath.row]
+    guard let user = Auth.auth().currentUser else { return false }
+    
+    if item.sellerId != user.uid {
+      return false // cannot swipe on row to delete
+    }
+    return true // able to swipe to delete item
+  }
+  
+  // TODO: that's not enough to only prevent accidental deletion on the client, we need to protect the database as well, we will do so using Firebase "Security Rules"
 }
 
 extension ItemFeedViewController: UITableViewDelegate {

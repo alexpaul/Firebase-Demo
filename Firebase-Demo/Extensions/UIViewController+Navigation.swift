@@ -25,4 +25,8 @@ extension UIViewController {
     resetWindow(with: newVC)
   }
   
+  public static func showVC(viewcontroller: UIViewController) {
+    resetWindow(with: viewcontroller)
+  }
+  
 }
