@@ -18,6 +18,24 @@ In order to run this app please do the following:
 
 [Firebase](https://firebase.google.com/) 
 
+## App Features
+
+- [x] user can sign in
+- [x] user can create a new account
+- [x] user can sign out
+- [x] user can create an item
+- [x] user can view an item
+- [x] app stores user profile photos 
+- [x] app stores item photos
+- [x] user can change profile photo and display name
+- [ ] user can delete ONLY their created item (security rules)
+- [ ] user can see a specific user's items 
+- [ ] can add a (question / answer) to an item (firebase subcollections)
+- [ ] can query (filter) for a specific category of items 
+- [ ] user can favorite an item from the item feed
+
+
+
 ## 1. Sign up using your Google account and create a Firebase Project
 
 [Firebase Console](https://console.firebase.google.com/u/0/)
