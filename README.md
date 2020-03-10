@@ -30,6 +30,7 @@ In order to run this app please do the following:
 - [x] user can change profile photo and display name
 - [ ] user can delete ONLY their created item (security rules)
 - [ ] user can see a specific user's items 
+- [ ] can add a (question / answer) to an item (firebase subcollections)
 - [ ] can query (filter) for a specific category of items 
 - [ ] user can favorite an item from the item feed
 
