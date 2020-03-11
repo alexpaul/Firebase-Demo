@@ -77,6 +77,7 @@ class CreateItemViewController: UIViewController {
   }
   
   @IBAction func sellButtonPressed(_ sender: UIBarButtonItem) {
+    sender.isEnabled = false
     guard let itemName = itemNameTextField.text,
       !itemName.isEmpty,
       let priceText = itemPriceTextField.text,
@@ -84,25 +85,29 @@ class CreateItemViewController: UIViewController {
       let price = Double(priceText),
       let selectedImage = selectedImage else {
         showAlert(title: "Missing Fields", message: "All fields are required along with a photo.")
+        sender.isEnabled = true
         return
     }
     
     guard let displayName = Auth.auth().currentUser?.displayName else {
       showAlert(title: "Incomplete Profile", message: "Please complete your Profile.")
+      sender.isEnabled = true
       return
     }
     
     // resize image before uploading to Storage
     let resizedImage = UIImage.resizeImage(originalImage: selectedImage, rect: itemImageView.bounds)
     
-    dbService.createItem(itemName: itemName, price: price, category: category, displayName: displayName) { [weak self] (result) in
+    dbService.createItem(itemName: itemName, price: price, category: category, displayName: displayName) { [weak self, weak sender] (result) in
       switch result {
       case.failure(let error):
         DispatchQueue.main.async {
           self?.showAlert(title: "Error creating item", message: "Sorry something went wrong: \(error.localizedDescription)")
+          sender?.isEnabled = true
         }
       case .success(let documentId):
         self?.uploadPhoto(photo: resizedImage, documentId: documentId)
+        sender?.isEnabled = true
       }
     }
   }

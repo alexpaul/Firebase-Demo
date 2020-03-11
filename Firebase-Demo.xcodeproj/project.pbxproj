@@ -19,6 +19,8 @@
 		574C4D94240D776B00853A59 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574C4D93240D776B00853A59 /* Category.swift */; };
 		574C4D96240D7B8F00853A59 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574C4D95240D7B8F00853A59 /* Item.swift */; };
 		574C4D98240D7E6000853A59 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574C4D97240D7E6000853A59 /* DatabaseService.swift */; };
+		57634F4924196A64002B88EE /* ItemDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57634F4824196A64002B88EE /* ItemDetailController.swift */; };
+		57634F4B241973B0002B88EE /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57634F4A241973B0002B88EE /* HeaderView.swift */; };
 		5764560224096E4D00203760 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5764560124096E4D00203760 /* GoogleService-Info.plist */; };
 		576456052409755300203760 /* AuthenticationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576456042409755300203760 /* AuthenticationSession.swift */; };
 		57845ACD24092D4300F35651 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57845ACC24092D4300F35651 /* AppDelegate.swift */; };
@@ -64,6 +66,8 @@
 		574C4D93240D776B00853A59 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		574C4D95240D7B8F00853A59 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		574C4D97240D7E6000853A59 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		57634F4824196A64002B88EE /* ItemDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailController.swift; sourceTree = "<group>"; };
+		57634F4A241973B0002B88EE /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		5764560124096E4D00203760 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		576456042409755300203760 /* AuthenticationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSession.swift; sourceTree = "<group>"; };
 		57845AC924092D4300F35651 /* Firebase-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Firebase-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +192,7 @@
 				57845AF024092DBB00F35651 /* GradientView.swift */,
 				57845AF224092DDC00F35651 /* DesignableView.swift */,
 				574C4D90240D757900853A59 /* CategoryCell.swift */,
+				57634F4A241973B0002B88EE /* HeaderView.swift */,
 				57EE7760240FFE150042EA62 /* ItemCell.swift */,
 				57EE775E240FFDEF0042EA62 /* ItemCell.xib */,
 			);
@@ -200,6 +205,7 @@
 				57845AD024092D4300F35651 /* LoginViewController.swift */,
 				574C4D82240D5F1200853A59 /* MainTabBarController.swift */,
 				574C4D84240D5F3800853A59 /* ItemFeedViewController.swift */,
+				57634F4824196A64002B88EE /* ItemDetailController.swift */,
 				574C4D86240D5F4A00853A59 /* SellItemViewController.swift */,
 				574C4D8A240D5F7100853A59 /* CreateItemViewController.swift */,
 				574C4D88240D5F5800853A59 /* ProfileViewController.swift */,
@@ -425,11 +431,13 @@
 				574C4D85240D5F3800853A59 /* ItemFeedViewController.swift in Sources */,
 				57EE776624100DD60042EA62 /* StorageService.swift in Sources */,
 				574C4D91240D757900853A59 /* CategoryCell.swift in Sources */,
+				57634F4B241973B0002B88EE /* HeaderView.swift in Sources */,
 				574C4D96240D7B8F00853A59 /* Item.swift in Sources */,
 				574C4D89240D5F5800853A59 /* ProfileViewController.swift in Sources */,
 				57845ACD24092D4300F35651 /* AppDelegate.swift in Sources */,
 				57845AF124092DBB00F35651 /* GradientView.swift in Sources */,
 				574C4D8B240D5F7100853A59 /* CreateItemViewController.swift in Sources */,
+				57634F4924196A64002B88EE /* ItemDetailController.swift in Sources */,
 				574C4D87240D5F4A00853A59 /* SellItemViewController.swift in Sources */,
 				574C4D83240D5F1200853A59 /* MainTabBarController.swift in Sources */,
 				57845AF324092DDC00F35651 /* DesignableView.swift in Sources */,
