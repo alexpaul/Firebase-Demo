@@ -31,7 +31,7 @@ In order to run this app please do the following:
 - [x] user can delete ONLY their created item (security rules)
 - [ ] set security rules to prevent user from deleting items that wasn't created by them
 - [ ] user can see a specific user's items 
-- [ ] can add a comment to an item (firebase subcollections)
+- [x] can add a comment to an item (firebase subcollections)
 - [ ] can query (filter) for a specific category of items 
 - [ ] user can favorite an item from the item feed
 
