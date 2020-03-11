@@ -71,7 +71,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PyK-rC-A9m"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sell Item" id="obS-UO-vmb"/>
+                    <tabBarItem key="tabBarItem" title="Sell Item" image="dollarsign.circle" catalog="system" id="obS-UO-vmb"/>
                     <connections>
                         <outlet property="collectionView" destination="tLC-fe-IVo" id="iDO-Mb-2lo"/>
                     </connections>
@@ -217,7 +217,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6UZ-KF-Jov"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="ifG-fZ-3nW"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" id="ifG-fZ-3nW"/>
                     <connections>
                         <outlet property="displayNameTextField" destination="ayg-dE-4d8" id="4ME-Bh-fua"/>
                         <outlet property="emailLabel" destination="duG-1K-pB5" id="gOk-VM-Ole"/>
@@ -271,12 +271,15 @@
                                 <rect key="frame" x="0.0" y="762" width="414" height="100"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter your comment" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cQM-8c-VTH">
-                                        <rect key="frame" x="8" y="33" width="354" height="34"/>
+                                        <rect key="frame" x="8" y="33" width="346" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="85o-q2-7Qr">
-                                        <rect key="frame" x="370" y="35" width="36" height="30"/>
+                                        <rect key="frame" x="362" y="35" width="44" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="W6b-1f-0Uk"/>
+                                        </constraints>
                                         <state key="normal" title="Send"/>
                                         <connections>
                                             <action selector="sendButtonPressed:" destination="WCW-Ay-3tF" eventType="touchUpInside" id="AyL-uP-K7a"/>
@@ -285,12 +288,12 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="85o-q2-7Qr" firstAttribute="leading" secondItem="cQM-8c-VTH" secondAttribute="trailing" constant="8" id="09z-Dg-xfn"/>
-                                    <constraint firstItem="85o-q2-7Qr" firstAttribute="centerY" secondItem="AK6-RD-ai7" secondAttribute="centerY" id="949-lg-29I"/>
-                                    <constraint firstItem="cQM-8c-VTH" firstAttribute="leading" secondItem="AK6-RD-ai7" secondAttribute="leading" constant="8" id="R84-WC-ZJu"/>
-                                    <constraint firstAttribute="trailing" secondItem="85o-q2-7Qr" secondAttribute="trailing" constant="8" id="dtN-pC-rzD"/>
-                                    <constraint firstItem="cQM-8c-VTH" firstAttribute="centerY" secondItem="AK6-RD-ai7" secondAttribute="centerY" id="g3I-cW-DhS"/>
+                                    <constraint firstItem="85o-q2-7Qr" firstAttribute="centerY" secondItem="AK6-RD-ai7" secondAttribute="centerY" id="0Un-9j-NxI"/>
+                                    <constraint firstItem="cQM-8c-VTH" firstAttribute="centerY" secondItem="AK6-RD-ai7" secondAttribute="centerY" id="MCm-4N-jjz"/>
                                     <constraint firstAttribute="height" constant="100" id="l83-cb-Jxg"/>
+                                    <constraint firstItem="85o-q2-7Qr" firstAttribute="leading" secondItem="cQM-8c-VTH" secondAttribute="trailing" constant="8" id="och-3C-1fQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="85o-q2-7Qr" secondAttribute="trailing" constant="8" id="q6c-kw-MCm"/>
+                                    <constraint firstItem="cQM-8c-VTH" firstAttribute="leading" secondItem="AK6-RD-ai7" secondAttribute="leading" constant="8" id="sqw-f9-DqX"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qxZ-2S-f6U">
@@ -406,7 +409,7 @@
         <scene sceneID="eK5-Ps-boB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6CC-Hm-Ygz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item Feed" id="HeD-LA-he7"/>
+                    <tabBarItem key="tabBarItem" title="Item Feed" image="tag" catalog="system" id="HeD-LA-he7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="I2t-nR-Eso">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -423,8 +426,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="dollarsign.circle" catalog="system" width="64" height="60"/>
         <image name="pencil.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="person" catalog="system" width="64" height="58"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="photo" catalog="system" width="64" height="46"/>
+        <image name="tag" catalog="system" width="64" height="58"/>
     </resources>
 </document>

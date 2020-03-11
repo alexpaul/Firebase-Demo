@@ -24,7 +24,10 @@ class DatabaseService {
   
   private let db = Firestore.firestore()
   
-  public func createItem(itemName: String, price: Double, category: Category, displayName: String, completion: @escaping (Result<String, Error>) -> ()) {
+  public func createItem(itemName: String, price: Double,
+                         category: Category,
+                         displayName: String,
+                         completion: @escaping (Result<String, Error>) -> ()) {
     guard let user = Auth.auth().currentUser else { return }
     
     // generate a document for the "items" collection
@@ -42,7 +45,13 @@ class DatabaseService {
      let sellerId: String
      let categoryName: String
      */
-    db.collection(DatabaseService.itemsCollection).document(documentRef.documentID).setData(["itemName":itemName,"price": price, "itemId":documentRef.documentID, "listedDate": Timestamp(date: Date()), "sellerName": displayName,"sellerId": user.uid, "categoryName": category.name]) { (error) in
+    db.collection(DatabaseService.itemsCollection)
+      .document(documentRef.documentID)
+      .setData(["itemName":itemName,"price": price,
+                "itemId":documentRef.documentID,
+                "listedDate": Timestamp(date: Date()),
+                "sellerName": displayName,"sellerId": user.uid,
+                "categoryName": category.name]) { (error) in
       if let error = error {
         completion(.failure(error))
       } else {
@@ -52,11 +61,16 @@ class DatabaseService {
     
   }
   
-  public func createDatabaseUser(authDataResult: AuthDataResult, completion: @escaping (Result<Bool, Error>) -> ()) {
+  public func createDatabaseUser(authDataResult: AuthDataResult,
+                                 completion: @escaping (Result<Bool, Error>) -> ()) {
     guard let email = authDataResult.user.email else {
       return
     }
-    db.collection(DatabaseService.usersCollection).document(authDataResult.user.uid).setData(["email" : email, "createdDate": Timestamp(date: Date()), "userId": authDataResult.user.uid]) { (error) in
+    db.collection(DatabaseService.usersCollection)
+      .document(authDataResult.user.uid)
+      .setData(["email" : email,
+                "createdDate": Timestamp(date: Date()),
+                "userId": authDataResult.user.uid]) { (error) in
       
       if let error = error {
         completion(.failure(error))
@@ -66,9 +80,13 @@ class DatabaseService {
     }
   }
   
-  func updateDatabaseUser(displayName: String, photoURL: String, completion: @escaping (Result<Bool, Error>) -> ()) {
+  func updateDatabaseUser(displayName: String,
+                          photoURL: String,
+                          completion: @escaping (Result<Bool, Error>) -> ()) {
     guard let user = Auth.auth().currentUser else { return }
-    db.collection(DatabaseService.usersCollection).document(user.uid).updateData(["photoURL" : photoURL, "displayName" : displayName]) { (error) in
+    db.collection(DatabaseService.usersCollection)
+      .document(user.uid).updateData(["photoURL" : photoURL,
+                                      "displayName" : displayName]) { (error) in
             if let error = error {
               completion(.failure(error))
             } else {
@@ -77,8 +95,40 @@ class DatabaseService {
     }
   }
   
-  public func delete(item: Item, completion: @escaping (Result<Bool, Error>) -> ()) {
+  public func delete(item: Item,
+                     completion: @escaping (Result<Bool, Error>) -> ()) {
     db.collection(DatabaseService.itemsCollection).document(item.itemId).delete { (error) in
+      if let error = error {
+        completion(.failure(error))
+      } else {
+        completion(.success(true))
+      }
+    }
+  }
+  
+  public func postComment(item: Item, comment: String,
+                          completion: @escaping (Result<Bool, Error>) -> ()) {
+    guard let user = Auth.auth().currentUser,
+      let displayName = user.displayName else {
+        print("missing user data")
+        return
+    }
+    
+    // getting a new document
+    let docRef = db.collection(DatabaseService.itemsCollection)
+      .document(item.itemId)
+      .collection(DatabaseService.commentsCollection).document()
+   
+   // using the new document from above to write its contents to firebase
+    db.collection(DatabaseService.itemsCollection)
+      .document(item.itemId)
+      .collection(DatabaseService.commentsCollection)
+      .document(docRef.documentID).setData(["text" : comment,
+                                            "commentDate": Timestamp(date: Date()),
+                                            "itemName": item.itemName,
+                                            "itemId": item.itemId,
+                                            "sellerName": item.sellerName,
+                                            "commentedBy": displayName]) { (error) in
       if let error = error {
         completion(.failure(error))
       } else {

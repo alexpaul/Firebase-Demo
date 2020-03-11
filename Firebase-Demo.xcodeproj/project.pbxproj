@@ -21,6 +21,7 @@
 		574C4D98240D7E6000853A59 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574C4D97240D7E6000853A59 /* DatabaseService.swift */; };
 		57634F4924196A64002B88EE /* ItemDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57634F4824196A64002B88EE /* ItemDetailController.swift */; };
 		57634F4B241973B0002B88EE /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57634F4A241973B0002B88EE /* HeaderView.swift */; };
+		57634F4D24198F69002B88EE /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57634F4C24198F69002B88EE /* Comment.swift */; };
 		5764560224096E4D00203760 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5764560124096E4D00203760 /* GoogleService-Info.plist */; };
 		576456052409755300203760 /* AuthenticationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 576456042409755300203760 /* AuthenticationSession.swift */; };
 		57845ACD24092D4300F35651 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57845ACC24092D4300F35651 /* AppDelegate.swift */; };
@@ -68,6 +69,7 @@
 		574C4D97240D7E6000853A59 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		57634F4824196A64002B88EE /* ItemDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailController.swift; sourceTree = "<group>"; };
 		57634F4A241973B0002B88EE /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		57634F4C24198F69002B88EE /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		5764560124096E4D00203760 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		576456042409755300203760 /* AuthenticationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSession.swift; sourceTree = "<group>"; };
 		57845AC924092D4300F35651 /* Firebase-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Firebase-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +119,7 @@
 			children = (
 				574C4D93240D776B00853A59 /* Category.swift */,
 				574C4D95240D7B8F00853A59 /* Item.swift */,
+				57634F4C24198F69002B88EE /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				574C4D98240D7E6000853A59 /* DatabaseService.swift in Sources */,
+				57634F4D24198F69002B88EE /* Comment.swift in Sources */,
 				574C4D8D240D5FA000853A59 /* UIViewController+Navigation.swift in Sources */,
 				57EE7761240FFE150042EA62 /* ItemCell.swift in Sources */,
 				57845AD124092D4300F35651 /* LoginViewController.swift in Sources */,

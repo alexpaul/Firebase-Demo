@@ -28,11 +28,22 @@ class ItemFeedViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    configureTableView()
+    configureNavBar()
+  }
+  
+  private func configureTableView() {
     tableView.dataSource = self
     tableView.delegate = self
     
     // register our custom .xib ItemCell class
     tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "itemCell")
+  }
+  
+  private func configureNavBar() {
+    navigationItem.title = "Marketplace"
+    navigationItem.largeTitleDisplayMode = .always
+    navigationController?.navigationBar.prefersLargeTitles = true
   }
   
   override func viewDidAppear(_ animated: Bool) {
