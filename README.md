@@ -28,9 +28,10 @@ In order to run this app please do the following:
 - [x] app stores user profile photos 
 - [x] app stores item photos
 - [x] user can change profile photo and display name
-- [ ] user can delete ONLY their created item (security rules)
+- [x] user can delete ONLY their created item (security rules)
+- [ ] set security rules to prevent user from deleting items that wasn't created by them
 - [ ] user can see a specific user's items 
-- [ ] can add a (question / answer) to an item (firebase subcollections)
+- [ ] can add a comment to an item (firebase subcollections)
 - [ ] can query (filter) for a specific category of items 
 - [ ] user can favorite an item from the item feed
 
