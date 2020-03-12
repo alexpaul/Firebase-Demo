@@ -41,6 +41,16 @@ class ItemDetailController: UIViewController {
     return formatter
   }()
   
+  private var isFavorite = false {
+    didSet {
+      if isFavorite {
+        navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart.fill")
+      } else {
+        navigationItem.rightBarButtonItem?.image = UIImage(systemName: "heart")
+      }
+    }
+  }
+  
   init?(coder: NSCoder, item: Item) {
     self.item = item
     super.init(coder: coder)
@@ -53,12 +63,17 @@ class ItemDetailController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     originalValueForConstraint = containerBottomConstraint.constant
+    
     tableView.tableHeaderView = HeaderView(imageURL: item.imageURL)
     tableView.dataSource = self
+    
     commentTextField.delegate = self
     view.addGestureRecognizer(tapGesture)
     navigationItem.title = item.itemName
     navigationItem.largeTitleDisplayMode = .never
+    
+    // TODO: refactor code (helper functions) in viewDidLoad, we should always strive for less code in our viewDidLoad
+    updateUI()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -86,6 +101,24 @@ class ItemDetailController: UIViewController {
     super.viewWillDisappear(true)
     unregisterKeyboardNotifications()
     listener?.remove()
+  }
+  
+  private func updateUI() {
+    // check if item is a favorite and update heart icon accordingly
+    databaseService.isItemInFavorites(item: item) { [weak self] (result) in
+      switch result {
+      case .failure(let error):
+        DispatchQueue.main.async {
+          self?.showAlert(title: "Try again", message: error.localizedDescription)
+        }
+      case .success(let success):
+        if success { // true
+          self?.isFavorite = true
+        } else {
+          self?.isFavorite = false
+        }
+      }
+    }
   }
   
   @IBAction func sendButtonPressed(_ sender: UIButton) {
@@ -152,6 +185,42 @@ class ItemDetailController: UIViewController {
     containerBottomConstraint.constant = originalValueForConstraint
     commentTextField.resignFirstResponder()
   }
+  
+  @IBAction func favoriteButtonPressed(_ sender: UIBarButtonItem) {
+    
+    if isFavorite { // remove from favorites
+      databaseService.removeFromFavorites(item: item) { [weak self] (result) in
+        switch result {
+        case .failure(let error):
+          DispatchQueue.main.async {
+            self?.showAlert(title: "Failed to remove favorite", message: error.localizedDescription)
+          }
+        case .success:
+          DispatchQueue.main.async {
+            self?.showAlert(title: "Item removed", message: nil)
+            self?.isFavorite = false
+          }
+        }
+      }
+    } else { // add to favorites
+      databaseService.addToFavorites(item: item) { [weak self] (result) in
+         switch result {
+         case .failure(let error):
+           DispatchQueue.main.async {
+             self?.showAlert(title: "Favoriting error", message: error.localizedDescription)
+           }
+         case .success:
+           DispatchQueue.main.async {
+             self?.showAlert(title: "Item favorited", message: nil)
+            self?.isFavorite = true
+           }
+         }
+       }
+    }
+    
+    
+  }
+  
 }
 
 extension ItemDetailController: UITableViewDataSource {

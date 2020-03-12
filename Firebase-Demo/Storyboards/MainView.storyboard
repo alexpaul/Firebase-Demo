@@ -172,7 +172,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AiJ-dj-dl0">
-                                <rect key="frame" x="158" y="433" width="98" height="30"/>
+                                <rect key="frame" x="20" y="129" width="98" height="30"/>
                                 <state key="normal" title="Update Profile"/>
                                 <connections>
                                     <action selector="updateProfileButtonPressed:" destination="HE5-3x-dQQ" eventType="touchUpInside" id="Xom-AC-9mH"/>
@@ -191,29 +191,53 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8f-pw-rYP">
-                                <rect key="frame" x="177" y="493" width="60" height="30"/>
+                                <rect key="frame" x="334" y="129" width="60" height="30"/>
                                 <state key="normal" title="Sign Out"/>
                                 <connections>
                                     <action selector="signOutButtonPressed:" destination="HE5-3x-dQQ" eventType="touchUpInside" id="Ryb-Ub-6VV"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="iRe-pr-2Kr">
+                                <rect key="frame" x="20" y="317" width="374" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Igo-la-YQV"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="My Items"/>
+                                    <segment title="Favorites"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlPressed:" destination="HE5-3x-dQQ" eventType="valueChanged" id="SyS-ww-Slz"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="phz-cn-FVn">
+                                <rect key="frame" x="0.0" y="369" width="414" height="444"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="phz-cn-FVn" firstAttribute="trailing" secondItem="6UZ-KF-Jov" secondAttribute="trailing" id="0Od-63-sbE"/>
                             <constraint firstItem="duG-1K-pB5" firstAttribute="leading" secondItem="6UZ-KF-Jov" secondAttribute="leading" constant="20" id="3I8-Ux-WV7"/>
-                            <constraint firstItem="AiJ-dj-dl0" firstAttribute="centerY" secondItem="rdK-Kv-sAt" secondAttribute="centerY" id="6cd-lc-lrg"/>
                             <constraint firstItem="6UZ-KF-Jov" firstAttribute="trailing" secondItem="duG-1K-pB5" secondAttribute="trailing" constant="20" id="94a-LP-1Dd"/>
                             <constraint firstItem="eUu-w8-YKB" firstAttribute="top" secondItem="6UZ-KF-Jov" secondAttribute="top" constant="40" id="9d6-bU-wTH"/>
+                            <constraint firstItem="iRe-pr-2Kr" firstAttribute="leading" secondItem="6UZ-KF-Jov" secondAttribute="leading" constant="20" id="DrI-T5-2ZK"/>
+                            <constraint firstItem="phz-cn-FVn" firstAttribute="top" secondItem="iRe-pr-2Kr" secondAttribute="bottom" constant="8" symbolic="YES" id="Mja-WN-Sq3"/>
+                            <constraint firstItem="6UZ-KF-Jov" firstAttribute="trailing" secondItem="S8f-pw-rYP" secondAttribute="trailing" constant="20" id="OJg-4d-N2S"/>
                             <constraint firstItem="LPf-gz-MFn" firstAttribute="centerY" secondItem="eUu-w8-YKB" secondAttribute="centerY" id="P96-7E-8d1"/>
-                            <constraint firstItem="S8f-pw-rYP" firstAttribute="centerX" secondItem="rdK-Kv-sAt" secondAttribute="centerX" id="UdU-1V-Shn"/>
-                            <constraint firstItem="S8f-pw-rYP" firstAttribute="top" secondItem="AiJ-dj-dl0" secondAttribute="bottom" constant="30" id="Yo6-xi-OVD"/>
+                            <constraint firstItem="phz-cn-FVn" firstAttribute="leading" secondItem="6UZ-KF-Jov" secondAttribute="leading" id="ZoD-by-UbB"/>
+                            <constraint firstItem="AiJ-dj-dl0" firstAttribute="centerY" secondItem="eUu-w8-YKB" secondAttribute="centerY" id="bpn-iq-dqY"/>
                             <constraint firstItem="ayg-dE-4d8" firstAttribute="top" secondItem="eUu-w8-YKB" secondAttribute="bottom" constant="20" id="c20-jq-MOr"/>
+                            <constraint firstItem="S8f-pw-rYP" firstAttribute="centerY" secondItem="LPf-gz-MFn" secondAttribute="centerY" id="cNa-QJ-UOA"/>
                             <constraint firstItem="LPf-gz-MFn" firstAttribute="leading" secondItem="eUu-w8-YKB" secondAttribute="trailing" constant="8" id="fqT-eg-e0k"/>
                             <constraint firstItem="eUu-w8-YKB" firstAttribute="centerX" secondItem="rdK-Kv-sAt" secondAttribute="centerX" id="iZW-VK-J7N"/>
                             <constraint firstItem="6UZ-KF-Jov" firstAttribute="trailing" secondItem="ayg-dE-4d8" secondAttribute="trailing" constant="20" id="nzg-Tf-P8U"/>
-                            <constraint firstItem="AiJ-dj-dl0" firstAttribute="centerX" secondItem="rdK-Kv-sAt" secondAttribute="centerX" id="rUs-6T-bnp"/>
+                            <constraint firstItem="iRe-pr-2Kr" firstAttribute="top" secondItem="duG-1K-pB5" secondAttribute="bottom" constant="8" id="oH4-nw-ml0"/>
                             <constraint firstItem="ayg-dE-4d8" firstAttribute="leading" secondItem="6UZ-KF-Jov" secondAttribute="leading" constant="20" id="thW-SP-PnS"/>
+                            <constraint firstItem="phz-cn-FVn" firstAttribute="bottom" secondItem="6UZ-KF-Jov" secondAttribute="bottom" id="vCV-gP-Prn"/>
+                            <constraint firstItem="AiJ-dj-dl0" firstAttribute="leading" secondItem="6UZ-KF-Jov" secondAttribute="leading" constant="20" id="zaY-xX-c1x"/>
                             <constraint firstItem="duG-1K-pB5" firstAttribute="top" secondItem="ayg-dE-4d8" secondAttribute="bottom" constant="20" id="zcp-ct-5um"/>
+                            <constraint firstItem="6UZ-KF-Jov" firstAttribute="trailing" secondItem="iRe-pr-2Kr" secondAttribute="trailing" constant="20" id="zfO-YE-zse"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6UZ-KF-Jov"/>
                     </view>
@@ -222,6 +246,7 @@
                         <outlet property="displayNameTextField" destination="ayg-dE-4d8" id="4ME-Bh-fua"/>
                         <outlet property="emailLabel" destination="duG-1K-pB5" id="gOk-VM-Ole"/>
                         <outlet property="profileImageView" destination="eUu-w8-YKB" id="ZlP-aa-oFa"/>
+                        <outlet property="tableView" destination="phz-cn-FVn" id="QOV-NH-oQd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSS-gG-Y7g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -339,7 +364,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sxY-Cd-Fkg"/>
                     </view>
-                    <navigationItem key="navigationItem" id="TNv-4s-ZKA"/>
+                    <navigationItem key="navigationItem" id="TNv-4s-ZKA">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="heart" catalog="system" id="MFV-Jy-IPO">
+                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="favoriteButtonPressed:" destination="WCW-Ay-3tF" id="IqN-DB-4aD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="commentTextField" destination="cQM-8c-VTH" id="nZZ-NI-8jS"/>
                         <outlet property="containerBottomConstraint" destination="BPe-lD-eZQ" id="2UY-CI-73Y"/>
@@ -427,6 +459,7 @@
     </scenes>
     <resources>
         <image name="dollarsign.circle" catalog="system" width="64" height="60"/>
+        <image name="heart" catalog="system" width="64" height="54"/>
         <image name="pencil.circle.fill" catalog="system" width="64" height="60"/>
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="person.fill" catalog="system" width="64" height="60"/>
