@@ -33,7 +33,7 @@ In order to run this app please do the following:
 - [ ] user can see a specific user's items 
 - [x] can add a comment to an item (firebase subcollections)
 - [ ] can query (filter) for a specific category of items 
-- [ ] user can favorite an item from the item feed
+- [x] user can favorite an item from the item feed
 
 
 
