@@ -16,6 +16,10 @@ In order to run this app please do the following:
 
 ![app screenshot](Assets/app-screenshot.png)
 
+## Marketplace app
+
+![marketplace app](Assets/marketplace-app.gif)
+
 [Firebase](https://firebase.google.com/) 
 
 ## App Features
