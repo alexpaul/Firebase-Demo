@@ -40,17 +40,8 @@ class SellerItemsController: UIViewController {
     navigationItem.title = "@" + item.sellerName
   }
   
-  private func fetchItems() {
-    // TODO: refactor DatabaseService and StorageService to a singleton since we are creating new instances throughout our application
-    
-    // DataServiceService {
-    //   private init() {}
-    //   static let shared = DatabaseService()
-    // }
-    // e.g DatabaseService.shared.functon...
-    
-    
-    DatabaseService().fetchUserItems(userId: item.sellerId) { [weak self] (result) in
+  private func fetchItems() {    
+    DatabaseService.shared.fetchUserItems(userId: item.sellerId) { [weak self] (result) in
       switch result {
       case .failure(let error):
         DispatchQueue.main.async {

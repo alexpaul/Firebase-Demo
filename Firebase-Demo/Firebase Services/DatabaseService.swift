@@ -25,6 +25,9 @@ class DatabaseService {
   
   private let db = Firestore.firestore()
   
+  private init() {}
+  static let shared = DatabaseService()
+  
   public func createItem(itemName: String, price: Double,
                          category: Category,
                          displayName: String,

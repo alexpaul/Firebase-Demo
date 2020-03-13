@@ -23,9 +23,7 @@ class ItemFeedViewController: UIViewController {
       }
     }
   }
-  
-  private let databaseService = DatabaseService()
-  
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     configureTableView()
@@ -88,7 +86,7 @@ extension ItemFeedViewController: UITableViewDataSource {
     if editingStyle == .delete {
       // perform deletion on item
       let item = items[indexPath.row]
-      databaseService.delete(item: item) { [weak self] (result) in
+      DatabaseService.shared.delete(item: item) { [weak self] (result) in
         switch result {
         case .failure(let error):
           DispatchQueue.main.async {

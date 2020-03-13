@@ -26,9 +26,6 @@ class LoginViewController: UIViewController {
   
   private var accountState: AccountState = .existingUser
   
-  private var authSession = AuthenticationSession()
-  private var databaseService = DatabaseService()
-
   override func viewDidLoad() {
     super.viewDidLoad()
     clearErrorLabel()
@@ -47,7 +44,7 @@ class LoginViewController: UIViewController {
   
   private func continueLoginFlow(email: String, password: String) {
     if accountState == .existingUser {
-      authSession.signExistingUser(email: email, password: password) { [weak self] (result) in
+      AuthenticationSession.shared.signExistingUser(email: email, password: password) { [weak self] (result) in
         switch result {
         case .failure(let error):
           DispatchQueue.main.async {
@@ -61,7 +58,7 @@ class LoginViewController: UIViewController {
         }
       }
     } else {
-      authSession.createNewUser(email: email, password: password) { [weak self] (result) in
+      AuthenticationSession.shared.createNewUser(email: email, password: password) { [weak self] (result) in
         switch result {
         case .failure(let error):
           DispatchQueue.main.async {
@@ -77,7 +74,7 @@ class LoginViewController: UIViewController {
   }
   
   private func createDatabaseUser(authDataResult: AuthDataResult) {
-    databaseService.createDatabaseUser(authDataResult: authDataResult) { [weak self] (result) in
+    DatabaseService.shared.createDatabaseUser(authDataResult: authDataResult) { [weak self] (result) in
       switch result {
       case .failure(let error):
         DispatchQueue.main.async {

@@ -17,10 +17,7 @@ class CreateItemViewController: UIViewController {
   @IBOutlet weak var itemImageView: UIImageView!
   
   private var category: Category
-  
-  private let dbService = DatabaseService()
-  private let storageService = StorageService()
-  
+    
   private lazy var imagePickerController: UIImagePickerController = {
     let picker = UIImagePickerController()
     picker.delegate = self // confomrm to UIImagePickerContorllerDelegate and UINavigationControllerDelegate
@@ -98,7 +95,7 @@ class CreateItemViewController: UIViewController {
     // resize image before uploading to Storage
     let resizedImage = UIImage.resizeImage(originalImage: selectedImage, rect: itemImageView.bounds)
     
-    dbService.createItem(itemName: itemName, price: price, category: category, displayName: displayName) { [weak self, weak sender] (result) in
+    DatabaseService.shared.createItem(itemName: itemName, price: price, category: category, displayName: displayName) { [weak self, weak sender] (result) in
       switch result {
       case.failure(let error):
         DispatchQueue.main.async {
@@ -113,7 +110,7 @@ class CreateItemViewController: UIViewController {
   }
   
   private func uploadPhoto(photo: UIImage, documentId: String) {
-    storageService.uploadPhoto(itemId: documentId, image: photo) { [weak self] (result) in
+    StorageService.shared.uploadPhoto(itemId: documentId, image: photo) { [weak self] (result) in
       switch result {
       case .failure(let error):
         DispatchQueue.main.async {

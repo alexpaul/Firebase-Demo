@@ -17,7 +17,6 @@ class ItemDetailController: UIViewController {
 
   private var item: Item
   private var originalValueForConstraint: CGFloat = 0
-  private var databaseService = DatabaseService()
   
   private lazy var tapGesture: UITapGestureRecognizer = {
     let gesture = UITapGestureRecognizer()
@@ -99,7 +98,7 @@ class ItemDetailController: UIViewController {
   
   private func updateUI() {
     // check if item is a favorite and update heart icon accordingly
-    databaseService.isItemInFavorites(item: item) { [weak self] (result) in
+    DatabaseService.shared.isItemInFavorites(item: item) { [weak self] (result) in
       switch result {
       case .failure(let error):
         DispatchQueue.main.async {
@@ -128,7 +127,7 @@ class ItemDetailController: UIViewController {
   }
   
   private func postComment(text: String) {
-    databaseService.postComment(item: item, comment: text) { [weak self] (result) in
+    DatabaseService.shared.postComment(item: item, comment: text) { [weak self] (result) in
       switch result {
       case .failure(let error):
         DispatchQueue.main.async {
@@ -183,7 +182,7 @@ class ItemDetailController: UIViewController {
   @IBAction func favoriteButtonPressed(_ sender: UIBarButtonItem) {
     
     if isFavorite { // remove from favorites
-      databaseService.removeFromFavorites(item: item) { [weak self] (result) in
+      DatabaseService.shared.removeFromFavorites(item: item) { [weak self] (result) in
         switch result {
         case .failure(let error):
           DispatchQueue.main.async {
@@ -197,7 +196,7 @@ class ItemDetailController: UIViewController {
         }
       }
     } else { // add to favorites
-      databaseService.addToFavorites(item: item) { [weak self] (result) in
+      DatabaseService.shared.addToFavorites(item: item) { [weak self] (result) in
          switch result {
          case .failure(let error):
            DispatchQueue.main.async {

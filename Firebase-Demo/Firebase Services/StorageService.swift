@@ -18,6 +18,9 @@ class StorageService {
   // let's create a reference to the Firebase storage
   private let storageRef = Storage.storage().reference()
   
+  private init() {}
+  static let shared = StorageService()
+  
   // default parameters in Swift e.g userId: String? = nil
   public func uploadPhoto(userId: String? = nil, itemId: String? = nil, image: UIImage, completion: @escaping (Result<URL, Error>) -> ()) {
     

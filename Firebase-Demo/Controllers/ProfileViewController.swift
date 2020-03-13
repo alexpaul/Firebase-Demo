@@ -34,9 +34,6 @@ class ProfileViewController: UIViewController {
     }
   }
   
-  private let storageService = StorageService()
-  private let databaseService = DatabaseService()
-  
   private var viewState: ViewState = .myItems {
     didSet {
       tableView.reloadData()
@@ -89,7 +86,7 @@ class ProfileViewController: UIViewController {
       refreshControl.endRefreshing()
       return
     }
-    databaseService.fetchUserItems(userId: user.uid) { [weak self] (result) in
+    DatabaseService.shared.fetchUserItems(userId: user.uid) { [weak self] (result) in
       switch result {
       case .failure(let error):
         DispatchQueue.main.async {
@@ -105,7 +102,7 @@ class ProfileViewController: UIViewController {
   }
   
   private func fetchFavorites() {
-    databaseService.fetchFavorites { [weak self] (result) in
+    DatabaseService.shared.fetchFavorites { [weak self] (result) in
       switch result {
       case .failure(let error):
         DispatchQueue.main.async {
@@ -151,7 +148,7 @@ class ProfileViewController: UIViewController {
     print("resized image size: \(resizedImage)")
     
     // call storageService.upload
-    storageService.uploadPhoto(userId: user.uid, image: resizedImage) { [weak self] (result) in
+    StorageService.shared.uploadPhoto(userId: user.uid, image: resizedImage) { [weak self] (result) in
       // code here to add the photoURL to the user's photoURL property then commit changes
       switch result {
       case .failure(let error):
@@ -182,7 +179,7 @@ class ProfileViewController: UIViewController {
   }
   
   private func updateDatabaseUser(displayName: String, photoURL: String) {
-    databaseService.updateDatabaseUser(displayName: displayName, photoURL: photoURL) { (result) in
+    DatabaseService.shared.updateDatabaseUser(displayName: displayName, photoURL: photoURL) { (result) in
       switch result {
       case .failure(let error):
         print("failed to update db user: \(error.localizedDescription)")
