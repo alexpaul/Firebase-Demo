@@ -55,7 +55,7 @@ class ItemFeedViewController: UIViewController {
         }
       } else if let snapshot = snapshot {
         let items = snapshot.documents.map { Item($0.data()) }
-        self?.items = items
+        self?.items = items.sorted{ $0.listedDate.seconds > $1.listedDate.seconds }
       }
     })
   }
@@ -77,6 +77,10 @@ extension ItemFeedViewController: UITableViewDataSource {
     }
     let item = items[indexPath.row]
     cell.configureCell(for: item)
+    
+    // step 1 - delegating object
+    cell.delegate = self
+    
     return cell
   }
   
@@ -123,5 +127,16 @@ extension ItemFeedViewController: UITableViewDelegate {
   
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     return 140
+  }
+}
+
+// step 2 - delegating object
+extension ItemFeedViewController: ItemCellDelegate {
+  func didSelecteSellerName(_ itemCell: ItemCell, item: Item) {
+    let storyboard = UIStoryboard(name: "MainView", bundle: nil)
+    let sellerItemsController = storyboard.instantiateViewController(identifier: "SellerItemsController") { (coder) in
+      return SellerItemsController(coder: coder, item: item)
+    }
+    navigationController?.pushViewController(sellerItemsController, animated: true)
   }
 }

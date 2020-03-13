@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5705EE72241BD1AB005C8D76 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705EE71241BD1AB005C8D76 /* Favorite.swift */; };
+		5705EE74241BE5D9005C8D76 /* SellerItemsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705EE73241BE5D9005C8D76 /* SellerItemsController.swift */; };
+		5705EE76241BEEF2005C8D76 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705EE75241BEEF2005C8D76 /* Date+Extensions.swift */; };
 		574C4D81240D5E0A00853A59 /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 574C4D80240D5E0A00853A59 /* MainView.storyboard */; };
 		574C4D83240D5F1200853A59 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574C4D82240D5F1200853A59 /* MainTabBarController.swift */; };
 		574C4D85240D5F3800853A59 /* ItemFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574C4D84240D5F3800853A59 /* ItemFeedViewController.swift */; };
@@ -58,6 +60,8 @@
 		179EF6D25BB3C6F5C0A06E5F /* Pods_Firebase_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Firebase_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AC3BB5D04F21905B6B4CE0F /* Pods-Firebase-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase-Demo.release.xcconfig"; path = "Target Support Files/Pods-Firebase-Demo/Pods-Firebase-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		5705EE71241BD1AB005C8D76 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		5705EE73241BE5D9005C8D76 /* SellerItemsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellerItemsController.swift; sourceTree = "<group>"; };
+		5705EE75241BEEF2005C8D76 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		574C4D80240D5E0A00853A59 /* MainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainView.storyboard; sourceTree = "<group>"; };
 		574C4D82240D5F1200853A59 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		574C4D84240D5F3800853A59 /* ItemFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFeedViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +220,7 @@
 				574C4D84240D5F3800853A59 /* ItemFeedViewController.swift */,
 				57634F4824196A64002B88EE /* ItemDetailController.swift */,
 				574C4D86240D5F4A00853A59 /* SellItemViewController.swift */,
+				5705EE73241BE5D9005C8D76 /* SellerItemsController.swift */,
 				574C4D8A240D5F7100853A59 /* CreateItemViewController.swift */,
 				574C4D88240D5F5800853A59 /* ProfileViewController.swift */,
 			);
@@ -238,6 +243,7 @@
 				57EE776324100AF90042EA62 /* UIImage+Extensions.swift */,
 				574C4D8C240D5FA000853A59 /* UIViewController+Navigation.swift */,
 				574C4D8E240D5FDC00853A59 /* UIViewController+Alerts.swift */,
+				5705EE75241BEEF2005C8D76 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -442,7 +448,9 @@
 				57EE776624100DD60042EA62 /* StorageService.swift in Sources */,
 				574C4D91240D757900853A59 /* CategoryCell.swift in Sources */,
 				57634F4B241973B0002B88EE /* HeaderView.swift in Sources */,
+				5705EE74241BE5D9005C8D76 /* SellerItemsController.swift in Sources */,
 				574C4D96240D7B8F00853A59 /* Item.swift in Sources */,
+				5705EE76241BEEF2005C8D76 /* Date+Extensions.swift in Sources */,
 				574C4D89240D5F5800853A59 /* ProfileViewController.swift in Sources */,
 				57845ACD24092D4300F35651 /* AppDelegate.swift in Sources */,
 				57845AF124092DBB00F35651 /* GradientView.swift in Sources */,
