@@ -194,5 +194,21 @@ class DatabaseService {
     }
   }
   
+  public func fetchFavorites(completion: @escaping (Result<[Favorite], Error>) -> ()) {
+    // access users collection -> userid (document) -> favorites collection
+    guard let user = Auth.auth().currentUser else { return }
+    db.collection(DatabaseService.usersCollection).document(user.uid).collection(DatabaseService.favoritesCollection).getDocuments { (snapshot, error) in
+      if let error = error {
+        completion(.failure(error))
+      } else if let snapshot = snapshot {
+        // compact map removes nil values from an array
+        // [4, nil, 12, -9, nil] => [4, 12, -9]
+        // init?() => Favorite?
+        let favorites = snapshot.documents.compactMap { Favorite($0.data()) }
+        completion(.success(favorites))
+      }
+    }
+  }
+  
 }
 

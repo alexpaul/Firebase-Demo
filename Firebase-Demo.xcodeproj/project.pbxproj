@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5705EE72241BD1AB005C8D76 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5705EE71241BD1AB005C8D76 /* Favorite.swift */; };
 		574C4D81240D5E0A00853A59 /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 574C4D80240D5E0A00853A59 /* MainView.storyboard */; };
 		574C4D83240D5F1200853A59 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574C4D82240D5F1200853A59 /* MainTabBarController.swift */; };
 		574C4D85240D5F3800853A59 /* ItemFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574C4D84240D5F3800853A59 /* ItemFeedViewController.swift */; };
@@ -56,6 +57,7 @@
 		001D623EB182F2686070B90A /* Pods-Firebase-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase-Demo.debug.xcconfig"; path = "Target Support Files/Pods-Firebase-Demo/Pods-Firebase-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		179EF6D25BB3C6F5C0A06E5F /* Pods_Firebase_DemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Firebase_DemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AC3BB5D04F21905B6B4CE0F /* Pods-Firebase-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Firebase-Demo.release.xcconfig"; path = "Target Support Files/Pods-Firebase-Demo/Pods-Firebase-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		5705EE71241BD1AB005C8D76 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		574C4D80240D5E0A00853A59 /* MainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainView.storyboard; sourceTree = "<group>"; };
 		574C4D82240D5F1200853A59 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		574C4D84240D5F3800853A59 /* ItemFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFeedViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				574C4D95240D7B8F00853A59 /* Item.swift */,
 				57634F4C24198F69002B88EE /* Comment.swift */,
 				57601C19241A962300E64B6A /* Constants.swift */,
+				5705EE71241BD1AB005C8D76 /* Favorite.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -450,6 +453,7 @@
 				57845AF324092DDC00F35651 /* DesignableView.swift in Sources */,
 				574C4D94240D776B00853A59 /* Category.swift in Sources */,
 				574C4D8F240D5FDC00853A59 /* UIViewController+Alerts.swift in Sources */,
+				5705EE72241BD1AB005C8D76 /* Favorite.swift in Sources */,
 				57EE776424100AF90042EA62 /* UIImage+Extensions.swift in Sources */,
 				576456052409755300203760 /* AuthenticationSession.swift in Sources */,
 				57845ACF24092D4300F35651 /* SceneDelegate.swift in Sources */,

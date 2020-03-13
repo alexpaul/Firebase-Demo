@@ -44,8 +44,7 @@ class ProfileViewController: UIViewController {
   }
   
   // favorites data
-  // TODO: create Favorite model
-  private var favorites = [String]() {
+  private var favorites = [Favorite]() {
     didSet {
       DispatchQueue.main.async {
         self.tableView.reloadData()
@@ -71,11 +70,17 @@ class ProfileViewController: UIViewController {
     tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "itemCell")
     tableView.dataSource = self
     tableView.delegate = self
-    fetchItems()
+    
+    loadData()
     
     refreshControl = UIRefreshControl()
     tableView.refreshControl = refreshControl
-    refreshControl.addTarget(self, action: #selector(fetchItems), for: .valueChanged)
+    refreshControl.addTarget(self, action: #selector(loadData), for: .valueChanged)
+  }
+  
+  @objc private func loadData() {
+    fetchItems()
+    fetchFavorites()
   }
   
   @objc private func fetchItems() {
@@ -92,6 +97,22 @@ class ProfileViewController: UIViewController {
         }
       case .success(let items):
         self?.myItems = items
+      }
+      DispatchQueue.main.async {
+        self?.refreshControl.endRefreshing()
+      }
+    }
+  }
+  
+  private func fetchFavorites() {
+    databaseService.fetchFavorites { [weak self] (result) in
+      switch result {
+      case .failure(let error):
+        DispatchQueue.main.async {
+          self?.showAlert(title: "Failed fetching favorites", message: error.localizedDescription)
+        }
+      case .success(let favorites):
+        self?.favorites = favorites
       }
       DispatchQueue.main.async {
         self?.refreshControl.endRefreshing()
@@ -249,8 +270,8 @@ extension ProfileViewController: UITableViewDataSource {
       let item = myItems[indexPath.row]
       cell.configureCell(for: item)
     } else {
-      let _ = favorites[indexPath.row]
-      //cell.configureCell(for: favorite)
+      let favorite = favorites[indexPath.row]
+      cell.configureCell(for: favorite)
     }
     return cell
   }

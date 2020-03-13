@@ -17,13 +17,38 @@ class ItemCell: UITableViewCell {
   @IBOutlet weak var dateLabel: UILabel!
   @IBOutlet weak var priceLabel: UILabel!
   
+  private lazy var tapGesture: UITapGestureRecognizer = {
+    let gesture = UITapGestureRecognizer()
+    gesture.addTarget(self, action: #selector(handleTap(_:)))
+    return gesture
+  }()
+  
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    
+    sellerNameLabel.textColor = .systemOrange
+    sellerNameLabel.addGestureRecognizer(tapGesture)
+    sellerNameLabel.isUserInteractionEnabled = true
+  }
+  
+  @objc private func handleTap(_ gesture: UITapGestureRecognizer) {
+    print("was tapped")
+  }
+  
   public func configureCell(for item: Item) {
-    // setup image, import Kingfisher, install Kingfisher via pod
-    itemImageView.kf.setImage(with: URL(string: item.imageURL))
-    itemNameLabel.text = item.itemName
-    sellerNameLabel.text = "@\(item.sellerName)"
-    dateLabel.text = item.listedDate.description
-    let price = String(format: "%.2f", item.price)
+    updateUI(imageURL: item.imageURL, itemName: item.itemName, sellerName: item.sellerName, date: item.listedDate, price: item.price)
+  }
+  
+  public func configureCell(for favorite: Favorite) {
+    updateUI(imageURL: favorite.imageURL, itemName: favorite.itemName, sellerName: favorite.sellerName, date: favorite.favoritedDate.dateValue(), price: favorite.price)
+  }
+  
+  private func updateUI(imageURL: String, itemName: String, sellerName: String, date: Date, price: Double) {
+    itemImageView.kf.setImage(with: URL(string: imageURL))
+    itemNameLabel.text = itemName
+    sellerNameLabel.text = "@\(sellerName)"
+    dateLabel.text = date.description
+    let price = String(format: "%.2f", price)
     priceLabel.text = "$\(price)"
   }
 }
